@@ -1,74 +1,75 @@
-# various-commands
-よく使うけど忘れやすい色々なコマンド集。  
-主にパッケージの更新とかに的を絞って。
+# Linuxコマンド編
+ディレクトリの作成や移動、ファイルの作成、編集など、普段マウスを使って操作しているものは全てLinuxコマンドでできます。
 
+## pwd
+現在いるディレクトリの確認。  
+現在自分がいるディレクトリを確認する時に使うコマンド。
 
-
-
-
-
-
-# Home brew編
-### brewのバージョン確認
-```
-$ brew -v
+```sh
+# print working directoryの略
+pwd
 ```
 
-### brewのアップデート/アップグレード
-`update`はHomebrew自身の小規模なアップデート
-`upgrade`はHomebrew自身の大規模なアップグレード
-```
-$ brew update
-$ brew upgrade
-```
+## mkdir
+ディレクトリの作成。  
+スペース区切りで複数の並列ディレクトリ、`-p`を付けるとサブディレクトリが作成できる。
 
-### brewでインストールしたパッケージのリストを表示
-```
-$ brew list
-```
+```sh
+# make directoryの略
+mkdir command
 
-### brew問題がないか診断
-```
-$ brew doctor
+# 複数作成する場合
+mkdir command/html command/css
+
+# サブディレクトリも同時に作成する場合
+mkdir -p command/js/top
 ```
 
-### リンクの貼り直し
-```
-$ brew link [formula]
-```
+## cd
+ディレクトリの移動。
 
-### リンクの無効化
-```
-$ brew unlink [formula]
+```sh
+# commandディレクトリに移動する場合
+cd command
 ```
 
-### デッドリンクの削除
-```
-$ brew prune
-```
+## ls
+ディレクトリのファイルリストを表示する。
 
-### 更新されたパッケージがあるか確認
-```
-$ brew outdated
-```
+```sh
+# listの略（たぶん
+ls
 
+# サブディレクトリも表示する場合
+ls -R
 
-
-
-
-# npm編
-### npmのバージョンアップ
-```
-$ npm
+# 縦方向に並べつつ詳細情報も見たい場合
+ls -l
 ```
 
+## touch
+ファイルの作成。  
 
+```sh
+# htmlディレクトリの中にindex.htmlを作成する
+touch html/index.html
+```
 
+## cp
+ファイルやディレクトリのコピー。
 
+```sh
+# html/index.htmlをコピーしてlist.htmlとして複製する
+cp html/index.html html/list.html
+```
 
+## rm
+ファイルの削除。
 
+```sh
+# htmlディレクトリのindex.htmlを削除する
+rm html/list.html
 
-# rbenv編
-### rbenvでrubyのバージョンアップ
-
-
+# ディレクトリと中身のファイルを丸ごと削除する
+rm -rf js
+```
